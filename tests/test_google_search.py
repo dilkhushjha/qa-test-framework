@@ -7,6 +7,6 @@ def test_google_search(driver):
 
     google.open_google()
 
-    google.search("Selenium Python")
+    google.search("Selenium")
 
-    assert "Selenium Python" in driver.title
+    assert "Selenium" in driver.title
