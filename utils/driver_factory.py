@@ -4,12 +4,11 @@ from selenium.webdriver.chrome.options import Options
 
 def get_driver():
 
-    chrome_options = Options()
+    options = Options()
 
-    chrome_options.add_argument("--headless=new")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Remote(
+        command_executor='http://localhost:4444/wd/hub',
+        options=options
+    )
 
     return driver
